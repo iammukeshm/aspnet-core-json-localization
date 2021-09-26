@@ -35,5 +35,11 @@ namespace JSONLocalization.NET.Controllers
             var message = string.Format(_loc["welcome"],name);
             return Ok(message);
         }
+        [HttpGet("all")]
+        public IActionResult GetAll()
+        {
+            var message = _loc.GetAllStrings();
+            return Ok(message);
+        }
     }
 }
