@@ -1,3 +1,4 @@
 ﻿{
-  "hi": "Hello Mukesh"
+  "hi": "Hello",
+  "welcome": "Welcome {0}, How are you?"
 }

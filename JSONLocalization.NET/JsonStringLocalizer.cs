@@ -27,7 +27,7 @@ namespace JSONLocalization.NET
                 get
                 {
                     string value = GetString(name);
-                    return new LocalizedString(name, value ?? $"{name} [{Thread.CurrentThread.CurrentCulture.Name}]", value == null);
+                    return new LocalizedString(name, value ?? name, value == null);
                 }
             }
 
@@ -81,32 +81,7 @@ namespace JSONLocalization.NET
                     return result;
                 }
 
-                WriteEmptyKeys(new CultureInfo("en-US"), fullFilePath);
                 return default(string);
-            }
-
-            private void WriteEmptyKeys(CultureInfo sourceCulture, string fullFilePath)
-            {
-                string sourceFilePath = $"{Localization}/{sourceCulture.Name}.json";
-                if (!File.Exists(sourceFilePath)) return;
-                using (var str = new FileStream(sourceFilePath, FileMode.Open, FileAccess.Read, FileShare.Read))
-                using (var outStream = File.Create(fullFilePath))
-                using (var sWriter = new StreamWriter(outStream))
-                using (var writer = new JsonTextWriter(sWriter))
-                using (var sReader = new StreamReader(str))
-                using (var reader = new JsonTextReader(sReader))
-                {
-                    writer.Formatting = Formatting.Indented;
-                    var jobj = JObject.Load(reader);
-                    writer.WriteStartObject();
-                    foreach (var property in jobj.Properties())
-                    {
-                        writer.WritePropertyName(property.Name);
-                        writer.WriteNull();
-                    }
-
-                    writer.WriteEndObject();
-                }
             }
 
             private T PullDeserialize<T>(string propertyName, string filePath)
