@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31710.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONLocalization.NET", "JSONLocalization.NET\JSONLocalization.NET.csproj", "{5E4F7E99-1310-43FE-80A2-28C255E722FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E4F7E99-1310-43FE-80A2-28C255E722FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E4F7E99-1310-43FE-80A2-28C255E722FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E4F7E99-1310-43FE-80A2-28C255E722FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E4F7E99-1310-43FE-80A2-28C255E722FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23EC88F7-CDE4-4AFE-9F1A-19347564CC39}
+	EndGlobalSection
+EndGlobal
