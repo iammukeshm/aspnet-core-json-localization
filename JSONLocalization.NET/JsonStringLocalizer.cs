@@ -60,12 +60,6 @@ namespace JSONLocalization.NET
             }
         }
 
-        public IStringLocalizer WithCulture(CultureInfo culture)
-        {
-            CultureInfo.DefaultThreadCurrentCulture = culture;
-            return new JsonStringLocalizer(_cache);
-        }
-
         private string GetString(string key)
         {
             string relativeFilePath = $"Resources/{Thread.CurrentThread.CurrentCulture.Name}.json";
