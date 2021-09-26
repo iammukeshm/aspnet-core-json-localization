@@ -15,13 +15,11 @@ namespace JSONLocalization.NET.Controllers
 
         private readonly ILogger<DemoController> _logger;
         private readonly IStringLocalizer<DemoController> _loc;
-
         public DemoController(ILogger<DemoController> logger, IStringLocalizer<DemoController> loc)
         {
             _logger = logger;
             _loc = loc;
         }
-
         [HttpGet]
         public IActionResult Get()
         {
@@ -32,7 +30,7 @@ namespace JSONLocalization.NET.Controllers
         [HttpGet("{name}")]
         public IActionResult Get(string name)
         {
-            var message = string.Format(_loc["welcome"],name);
+            var message = string.Format(_loc["welcome"], name);
             return Ok(message);
         }
         [HttpGet("all")]
